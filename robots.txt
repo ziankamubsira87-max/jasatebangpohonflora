@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jasatebangpohonflora.biz.id/sitemap.xml
