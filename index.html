@@ -53,7 +53,7 @@ nav a[href="#layanan"],nav a[href="#lokasi"]{border-color:rgba(197,166,106,.42);
 .location-address{font-family:"Outfit","Nunito Sans",sans-serif;font-size:17px;font-weight:600;line-height:1.8;letter-spacing:.15px;color:#f5f1e8;padding-left:15px;border-left:3px solid var(--gold);max-width:440px}
 
 /* Galeri dokumentasi pekerjaan */
-.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.gallery figure{margin:0;background:#fff;border:1px solid #e7e1d5;overflow:hidden}.gallery img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}.gallery figcaption{padding:15px 17px;font-family:"Outfit",sans-serif;font-weight:600;color:var(--forest)}@media(max-width:760px){.gallery{grid-template-columns:1fr}.gallery img{aspect-ratio:16/10}}
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.gallery figure{margin:0;background:#fff;border:1px solid #e7e1d5;overflow:hidden}.gallery img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .45s cubic-bezier(.2,.7,.2,1);transform:scale(1)}.gallery figure:hover img,.gallery figure:focus-within img{transform:scale(1.09)}.gallery figure{cursor:zoom-in}@media(hover:none){.gallery figure:active img{transform:scale(1.04)}}@media(prefers-reduced-motion:reduce){.gallery img{transition:none}.gallery figure:hover img,.gallery figure:focus-within img,.gallery figure:active img{transform:none}}.gallery figcaption{padding:15px 17px;font-family:"Outfit",sans-serif;font-weight:600;color:var(--forest)}@media(max-width:760px){.gallery{grid-template-columns:1fr}.gallery img{aspect-ratio:16/10}}
 </style>
 </head>
 <body>
