@@ -128,6 +128,19 @@ nav a{ text-shadow:0 0 7px rgba(197,166,106,.2); }
   .gallery figure:hover{transform:none}
 }
 
+
+/* WhatsApp dibuat ringkas: ikon kecil, panel hanya muncul saat diklik */
+.whatsapp-float{width:46px;height:46px;right:20px;bottom:20px}
+.whatsapp-float svg{width:24px;height:24px}
+.whatsapp-float::before{inset:-4px;border-width:1px}
+.whatsapp-label{display:none}
+.wa-chat-panel{right:20px;bottom:78px}
+@media(max-width:600px){
+  .whatsapp-float{width:42px;height:42px;right:14px;bottom:14px}
+  .whatsapp-float svg{width:22px;height:22px}
+  .wa-chat-panel{right:14px;bottom:66px}
+}
+
 </style>
 </head>
 <body>
@@ -207,7 +220,7 @@ document.getElementById('year').textContent=new Date().getFullYear();
  <form class="wa-chat-form" id="wa-chat-form"><input id="wa-chat-input" type="text" placeholder="Ketik pesan Anda..." aria-label="Ketik pesan" required><button type="submit">Kirim</button></form><div class="wa-chat-note">Anda akan melanjutkan percakapan melalui WhatsApp.</div>
 </div>
 <script>
-(()=>{const toggle=document.querySelector(".whatsapp-float"),panel=document.getElementById("wa-chat-panel"),close=panel.querySelector(".wa-chat-close"),input=document.getElementById("wa-chat-input"),form=document.getElementById("wa-chat-form");function setOpen(open){panel.classList.toggle("is-open",open);panel.setAttribute("aria-hidden",String(!open));toggle.setAttribute("aria-expanded",String(open));if(open)input.focus()}toggle.addEventListener("click",()=>setOpen(!panel.classList.contains("is-open")));close.addEventListener("click",()=>setOpen(false));form.addEventListener("submit",e=>{e.preventDefault();const message=input.value.trim();if(!message)return;const url="https://wa.me/6281908029133?text="+encodeURIComponent(message);window.open(url,"_blank","noopener,noreferrer")});document.addEventListener("keydown",e=>{if(e.key==="Escape")setOpen(false)})})();
+(()=>{const toggle=document.querySelector(".whatsapp-float"),panel=document.getElementById("wa-chat-panel"),close=panel.querySelector(".wa-chat-close"),input=document.getElementById("wa-chat-input"),form=document.getElementById("wa-chat-form");function setOpen(open){panel.classList.toggle("is-open",open);panel.setAttribute("aria-hidden",String(!open));toggle.setAttribute("aria-expanded",String(open));if(open)input.focus()}toggle.addEventListener("click",()=>setOpen(!panel.classList.contains("is-open")));close.addEventListener("click",()=>setOpen(false));document.addEventListener("click",e=>{if(panel.classList.contains("is-open")&&!panel.contains(e.target)&&!toggle.contains(e.target))setOpen(false)});form.addEventListener("submit",e=>{e.preventDefault();const message=input.value.trim();if(!message)return;const url="https://wa.me/6281908029133?text="+encodeURIComponent(message);setOpen(false);window.open(url,"_blank","noopener,noreferrer")});document.addEventListener("keydown",e=>{if(e.key==="Escape")setOpen(false)})})();
 </script>
 
 </body></html>
