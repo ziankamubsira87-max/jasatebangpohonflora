@@ -73,6 +73,61 @@ nav a{ text-shadow:0 0 7px rgba(197,166,106,.2); }
   h1,h2,h3,p,a,span,li,figcaption,strong,small,label,button,summary,.eyebrow,.tag,.num,.location-address{animation:none;text-shadow:none}
   nav a{text-shadow:none}
 }
+
+/* Bingkai foto khas Nandar Flora: forest green + gold */
+.gallery figure{
+  border:3px solid var(--forest);
+  outline:1px solid var(--gold);
+  outline-offset:-7px;
+  box-shadow:0 8px 22px rgba(16,37,29,.16), inset 0 0 0 1px rgba(197,166,106,.55);
+  border-radius:3px;
+  background:var(--forest);
+  padding:5px;
+  transition:box-shadow .3s ease,transform .3s ease,border-color .3s ease;
+}
+.gallery figure:hover{
+  border-color:#244b39;
+  box-shadow:0 14px 30px rgba(16,37,29,.24),0 0 0 2px rgba(197,166,106,.5);
+  transform:translateY(-3px);
+}
+.gallery figure img{
+  border:1px solid rgba(197,166,106,.9);
+  outline:1px solid rgba(16,37,29,.25);
+  outline-offset:-5px;
+}
+.gallery figcaption{
+  margin:5px 2px 1px;
+  padding:13px 14px;
+  color:#f5f1e8;
+  background:linear-gradient(110deg,#10251d,#1b382c);
+  border-top:1px solid var(--gold);
+}
+.about-photo{
+  border:4px solid var(--forest);
+  outline:2px solid var(--gold);
+  outline-offset:-10px;
+  box-shadow:0 12px 28px rgba(16,37,29,.2);
+  position:relative;
+}
+.hero{position:relative}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px solid rgba(197,166,106,.72);
+  outline:1px solid rgba(245,241,232,.18);
+  outline-offset:5px;
+  pointer-events:none;
+}
+@media(max-width:760px){
+  .hero::after{inset:9px}
+  .gallery figure{padding:4px}
+}
+@media(prefers-reduced-motion:reduce){
+  .gallery figure{transition:none}
+  .gallery figure:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
